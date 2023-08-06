@@ -1,4 +1,4 @@
-import React from 'react'
+import React ,{useState} from 'react'
 import Box from '@mui/material/Box';
 import Container from '@mui/material/Container';
 import Grid from '@mui/material/Grid';
@@ -8,6 +8,15 @@ import Avatar from '@mui/material/Avatar';
 import Theme from './Theme';
 
 function About() {
+
+    const [open ,setopen] = useState(false)
+    const [buttonname ,setbuttonname] = useState('Read More..')
+
+    function readmore (){
+      setopen(!open) ;
+      setbuttonname('Close')
+    }
+
   return (
     <div style={{backgroundColor:"#2e3542"}}>
          <Box sx={{flexGrow:1}}>
@@ -23,16 +32,11 @@ function About() {
                     </Grid>
                     <Grid lg={5} marginTop={2}>
                         <Typography variant='h4' color="white">About  <span style={{color:"#00eeff"}}>Me</span> </Typography>
-                        <Typography variant='h8' color="white">Writing objects: 100% (7/7), 566 bytes | 566.00 KiB/s, done.
-                                        Total 7 (delta 6), reused 0 (delta 0), pack-reused 0
-                                         remote: Resolving deltas: 100% (6/6), completed with 6 local objects.
-                                          To https://github.com/AI4M-Official/Prudent-Dashboard.git
-                                               a3c27f9..dbb7a5e  Akash-testing Akash-testing
-                                            branch 'Akash-testing' set up to track 'origin/Akash-testing'.
-                                              PS C:\Users\akash\OneDrive\Desktop\Prudent-Dashboard\Prudent-Dashboard</Typography>
+                        <Typography variant='h8' color="white">Hello! I'm Akash, a passionate and results-driven software developer actively seeking new opportunities to showcase my skills and expertise. With a primary focus on web development and app development, I thrive in creating engaging and cutting-edge digital experiences.</Typography><br/><br/>
+                       {open && <Typography variant='h8' color="white">My ultimate goal as a software developer is to create impactful and forward-thinking solutions. I thrive in collaborative environments, where I can contribute my expertise and learn from others. I am eager to join teams that share the same drive to shape the future of technology.</Typography> }
                                               <br/><br/>
                                               <Grid>
-                                              <Button variant='contained' size='medium' sx={{backgroundColor:"#00eeff",color:"black",borderRadius:"16px"}}>Read More..</Button>
+                                              <Button variant='contained' onClick={readmore} size='medium' sx={{backgroundColor:"#00eeff",color:"black",borderRadius:"16px"}}>{buttonname}</Button>
                                               </Grid>
 
                     </Grid>

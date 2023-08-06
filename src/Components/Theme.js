@@ -1,6 +1,6 @@
 import Avatar from '@mui/material/Avatar';
 import AvatarGroup from '@mui/material/AvatarGroup';
-import user from "../images/user3.jpg";
+import user from "../images/akashbgportfollio.jpg";
 
 const Theme = ({ src, alt }) => {
   return (
